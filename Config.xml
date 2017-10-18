@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AlteryxJavaScriptPlugin>
+  <Properties>
+    <MetaInfo>
+      <Name>cURLDownloadTool</Name>
+      <Description>Download tool with a cURL backend</Description>
+      <ToolVersion>1</ToolVersion>
+      <CategoryName>Connectors</CategoryName>
+      <Author>Ozzie Dembowski</Author>
+      <Icon>cURLDownloadToolIcon.png</Icon>
+    </MetaInfo>
+  </Properties>
+</AlteryxJavaScriptPlugin>
