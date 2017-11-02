@@ -19,7 +19,7 @@
   </Properties>
   <GuiSettings Help="" Html="cURLDownloadToolGui.html" Icon="cURLDownloadToolIcon.png" SDKVersion="10.1">
     <InputConnections>
-      <Connection Name="Input" AllowMultiple="False" Optional="True" Type="Connection" Label=""/>
+      <Connection Name="Input" AllowMultiple="False" Optional="True" Type="Connection" Label="I"/>
     </InputConnections>
     <OutputConnections>
       <Connection Name="OutputR" AllowMultiple="False" Optional="False" Type="Connection" Label="R"/>

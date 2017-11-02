@@ -1,9 +1,32 @@
 <?xml version="1.0"?>
 <AlteryxDocument yxmdVer="11.3">
   <Nodes>
+    <Node ToolID="169">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1230" y="594" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="Replace([HeaderPath], '{User}', GetEnvironmentVariable('USERNAME'))" field="HeaderPath" size="99999" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="2">
+          <Name />
+          <DefaultAnnotationText>HeaderPath = Replace([HeaderPath], '{User}', GetEnvironmentVariable('USERNAME'))...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="HeaderPath" size="99999" source="Formula: Replace([HeaderPath], '{User}', GetEnvironmentVariable('USERNAME'))" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
     <Node ToolID="75">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="270" y="318" width="96" height="84" />
+        <Position x="270" y="330" width="96" height="84" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -107,7 +130,7 @@
       <Properties>
         <Configuration />
         <Annotation DisplayMode="0">
-          <Name>URLField</Name>
+          <Name>radioURLField</Name>
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
@@ -120,7 +143,7 @@
       <Properties>
         <Configuration />
         <Annotation DisplayMode="0">
-          <Name>URLMan</Name>
+          <Name>radioURLMan</Name>
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
@@ -231,7 +254,7 @@
       <Properties>
         <Configuration />
         <Annotation DisplayMode="0">
-          <Name>HeaderFields</Name>
+          <Name>radioHeaderFields</Name>
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
@@ -244,7 +267,7 @@
       <Properties>
         <Configuration />
         <Annotation DisplayMode="0">
-          <Name>HeaderMan</Name>
+          <Name>radioHeadersMan</Name>
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
@@ -283,7 +306,7 @@
       <Properties>
         <Configuration />
         <Annotation DisplayMode="0">
-          <Name>Headertextbox</Name>
+          <Name>headersText</Name>
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
@@ -322,7 +345,7 @@
       <Properties>
         <Configuration />
         <Annotation DisplayMode="0">
-          <Name>HeaderListBox</Name>
+          <Name>headerFieldsList</Name>
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
@@ -459,7 +482,7 @@
       <Properties>
         <Configuration />
         <Annotation DisplayMode="0">
-          <Name>PayloadField</Name>
+          <Name>radioPayloadField</Name>
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
@@ -472,7 +495,7 @@
       <Properties>
         <Configuration />
         <Annotation DisplayMode="0">
-          <Name>PayloadMan</Name>
+          <Name>radioPayloadMan</Name>
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
@@ -511,7 +534,7 @@
       <Properties>
         <Configuration />
         <Annotation DisplayMode="0">
-          <Name>Payloadtextbox</Name>
+          <Name>payloadText</Name>
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
@@ -537,7 +560,7 @@
       <Properties>
         <Configuration />
         <Annotation DisplayMode="0">
-          <Name>PayloadDrop</Name>
+          <Name>payloadFieldDrop</Name>
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
@@ -570,7 +593,7 @@
       <Properties>
         <Configuration />
         <Annotation DisplayMode="0">
-          <Name>CredFields</Name>
+          <Name>radioCredentialsField</Name>
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
@@ -583,7 +606,7 @@
       <Properties>
         <Configuration />
         <Annotation DisplayMode="0">
-          <Name>CredMan</Name>
+          <Name>radioCredentialsMan</Name>
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
@@ -674,7 +697,7 @@
       <Properties>
         <Configuration />
         <Annotation DisplayMode="0">
-          <Name>NoCredentials</Name>
+          <Name>radioCredentialsNo</Name>
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
@@ -804,7 +827,7 @@
       <Properties>
         <Configuration />
         <Annotation DisplayMode="0">
-          <Name>NoPayload</Name>
+          <Name>radioPayloadNo</Name>
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
@@ -817,7 +840,7 @@
       <Properties>
         <Configuration />
         <Annotation DisplayMode="0">
-          <Name>NoHeaders</Name>
+          <Name>radioHeadersNo</Name>
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
@@ -825,15 +848,15 @@
     </Node>
     <Node ToolID="29">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
-        <Position x="1110" y="654" />
+        <Position x="1278" y="870" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <Name>Output29</Name>
+          <Name>OutputR</Name>
           <Abbrev>R</Abbrev>
         </Configuration>
         <Annotation DisplayMode="0">
-          <Name />
+          <Name>OutputR</Name>
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
@@ -909,6 +932,7 @@
       <Properties>
         <Configuration>
           <OrderChanged value="False" />
+          <CommaDecimal value="False" />
           <SelectFields>
             <SelectField field="HTTP Actions" selected="True" rename="Config" />
             <SelectField field="*Unknown" selected="True" />
@@ -968,7 +992,7 @@
     </Node>
     <Node ToolID="148">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="930" y="654" />
+        <Position x="1098" y="870" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -995,17 +1019,18 @@
     </Node>
     <Node ToolID="149">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="1014" y="654" />
+        <Position x="1182" y="870" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <FormulaFields>
-            <FormulaField field="Curl command" type="V_String" size="2147483647" expression="'curl ' + [Curl command]" />
+            <FormulaField expression="'curl ' + [Curl command]" field="Curl command" size="2147483647" type="V_String" />
           </FormulaFields>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
-          <DefaultAnnotationText>Curl command='curl ' + [Curl command]</DefaultAnnotationText>
+          <DefaultAnnotationText><![CDATA[Curl command = 'curl ' + [Curl command]
+]]></DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
         <MetaInfo connection="Output">
@@ -1018,15 +1043,15 @@
     </Node>
     <Node ToolID="153">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
-        <Position x="1386" y="450" />
+        <Position x="1590" y="714" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <Name>Output153</Name>
+          <Name>OutputO</Name>
           <Abbrev>O</Abbrev>
         </Configuration>
         <Annotation DisplayMode="0">
-          <Name />
+          <Name>OutputO</Name>
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
@@ -1040,7 +1065,7 @@
       <Properties>
         <Configuration>
           <UseFileInput value="False" />
-          <Name>Input21</Name>
+          <Name>Input</Name>
           <Abbrev>I</Abbrev>
           <ShowFieldMap value="False" />
           <Optional value="True" />
@@ -1067,7 +1092,7 @@
           </TextInput>
         </Configuration>
         <Annotation DisplayMode="0">
-          <Name>Text Input (20)</Name>
+          <Name>Input</Name>
           <DefaultAnnotationText />
           <Left value="True" />
         </Annotation>
@@ -1085,7 +1110,7 @@
     </Node>
     <Node ToolID="154">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-        <Position x="966" y="582" />
+        <Position x="1038" y="594" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -1095,7 +1120,7 @@
           </Fields>
           <Data>
             <r>
-              <c>C:\Users\odembowski\Desktop\CURL7\src\cheaders.txt</c>
+              <c>C:\Users\{User}\AppData\Roaming\Alteryx\Tools\cURLDownloadTool\Supporting_Macros\cheaders.txt</c>
             </r>
           </Data>
         </Configuration>
@@ -1106,57 +1131,27 @@
         </Annotation>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="HeaderPath" size="50" source="TextInput:" type="String" />
+            <Field name="HeaderPath" size="93" source="TextInput:" type="String" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
     </Node>
-    <Node ToolID="155">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
-        <Position x="1146" y="570" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <CartesianMode>Allow</CartesianMode>
-          <SelectConfiguration>
-            <Configuration outputConnection="Output">
-              <OrderChanged value="False" />
-              <SelectFields>
-                <SelectField field="*Unknown" selected="True" />
-              </SelectFields>
-            </Configuration>
-          </SelectConfiguration>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-        <MetaInfo connection="Output">
-          <RecordInfo>
-            <Field name="Field_1" size="2147483647" source="File: C:\Users\odembowski\Desktop\CURL7\src\DELETEME.txt" type="V_String" />
-            <Field name="HeaderPath" size="50" source="TextInput:" type="String" />
-          </RecordInfo>
-        </MetaInfo>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
-    </Node>
     <Node ToolID="156">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DynamicInput.DynamicInput">
-        <Position x="1254" y="570" />
+        <Position x="1386" y="630" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <InputConfiguration>
             <Configuration>
               <Passwords />
-              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="0">C:\Users\odembowski\Desktop\CURL7\src\cheaders.txt</File>
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="0">.\CURL7\src\cheaders.txt</File>
               <FormatSpecificOptions>
                 <CodePage>28591</CodePage>
                 <Delimeter>\0</Delimeter>
                 <IgnoreErrors>False</IgnoreErrors>
-                <FieldLen>254</FieldLen>
+                <FieldLen>99999</FieldLen>
                 <AllowShareWrite>False</AllowShareWrite>
                 <HeaderRow>False</HeaderRow>
                 <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
@@ -1173,25 +1168,20 @@
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
-        <MetaInfo connection="Output">
-          <RecordInfo>
-            <Field name="Field_1" size="254" source="File: C:\Users\odembowski\Desktop\CURL7\src\cheaders.txt" type="V_String" />
-          </RecordInfo>
-        </MetaInfo>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDynamicInput" />
     </Node>
     <Node ToolID="157">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
-        <Position x="1446" y="570" />
+        <Position x="1578" y="630" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <Name>Header Output</Name>
+          <Name>OutputH</Name>
           <Abbrev>H</Abbrev>
         </Configuration>
         <Annotation DisplayMode="0">
-          <Name />
+          <Name>OutputH</Name>
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
@@ -1205,7 +1195,7 @@
       <Properties>
         <Configuration />
         <Annotation DisplayMode="0">
-          <Name>CredWin</Name>
+          <Name>radioCredentialsWinAuth</Name>
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
@@ -1226,11 +1216,12 @@
     </Node>
     <Node ToolID="166">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="1218" y="450" />
+        <Position x="1482" y="714" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <OrderChanged value="False" />
+          <CommaDecimal value="False" />
           <SelectFields>
             <SelectField field="Field_1" selected="True" rename="Downloaded_Data" />
             <SelectField field="*Unknown" selected="True" />
@@ -1243,7 +1234,7 @@
         </Annotation>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="Downloaded_Data" size="2147483647" source="File: C:\Users\odembowski\Desktop\CURL7\src\DELETEME.txt" type="V_String" />
+            <Field name="Downloaded_Data" size="99999" source="File: C:\Users\odembowski\AppData\Roaming\Alteryx\Tools\cURLDownloadTool\Supporting_Macros\CURL7\src\DELETEME.txt" type="V_String" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -1251,11 +1242,12 @@
     </Node>
     <Node ToolID="167">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="1350" y="570" />
+        <Position x="1482" y="630" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <OrderChanged value="False" />
+          <CommaDecimal value="False" />
           <SelectFields>
             <SelectField field="Field_1" selected="True" rename="Downloaded Headers" />
             <SelectField field="*Unknown" selected="True" />
@@ -1268,11 +1260,246 @@
         </Annotation>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="Downloaded Headers" size="254" source="File: C:\Users\odembowski\Desktop\CURL7\src\cheaders.txt" type="V_String" />
+            <Field name="HTTP/1.1 500 Internal Server Error" size="99999" source="File: C:\Users\odembowski\AppData\Roaming\Alteryx\Tools\cURLDownloadTool\Supporting_Macros\CURL7\src\cheaders.txt" type="V_String" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="170">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1134" y="594" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="HeaderPath" selected="True" type="V_WString" size="99999" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="HeaderPath" size="99999" source="TextInput:" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="171">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BlockUntilDone.BlockUntilDone">
+        <Position x="906" y="654" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Config" size="8" source="Formula: '-X ' + [HTTP Actions]" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Output2">
+          <RecordInfo>
+            <Field name="Config" size="8" source="Formula: '-X ' + [HTTP Actions]" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Output3">
+          <RecordInfo>
+            <Field name="Config" size="8" source="Formula: '-X ' + [HTTP Actions]" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBlockUntilDone" />
+    </Node>
+    <Node ToolID="172">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="1314" y="630" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Error</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="HeaderPath" size="99999" source="Formula: Replace([HeaderPath], '{User}', GetEnvironmentVariable('USERNAME'))" type="V_WString" />
+            <Field name="Config" size="8" source="Formula: '-X ' + [HTTP Actions]" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="173">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1230" y="690" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="Replace([DownloadedDataPath], '{User}', GetEnvironmentVariable('USERNAME'))" field="DownloadedDataPath" size="999999" type="String" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="2">
+          <Name />
+          <DefaultAnnotationText>DownloadedDataPath = Replace([DownloadedDataPath], '{User}', GetEnvironmentVaria...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="DownloadedDataPath" size="999999" source="Formula: Replace([DownloadedDataPath], '{User}', GetEnvironmentVariable('USERNAME'))" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="174">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="1038" y="690" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="1" />
+          <Fields>
+            <Field name="DownloadedDataPath" />
+          </Fields>
+          <Data>
+            <r>
+              <c>C:\Users\{User}\AppData\Roaming\Alteryx\Tools\cURLDownloadTool\Supporting_Macros\DELETEME.txt</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="DownloadedDataPath" size="93" source="TextInput:" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="175">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DynamicInput.DynamicInput">
+        <Position x="1386" y="714" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <InputConfiguration>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="0">.\CURL7\src\DELETEME.txt</File>
+              <FormatSpecificOptions>
+                <CodePage>28591</CodePage>
+                <Delimeter>\0</Delimeter>
+                <IgnoreErrors>False</IgnoreErrors>
+                <FieldLen>99999</FieldLen>
+                <AllowShareWrite>False</AllowShareWrite>
+                <HeaderRow>False</HeaderRow>
+                <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+                <ImportLine>1</ImportLine>
+              </FormatSpecificOptions>
+            </Configuration>
+          </InputConfiguration>
+          <Mode>ReadList</Mode>
+          <ReadList_Field>DownloadedDataPath</ReadList_Field>
+          <ReadList_Type>Path</ReadList_Type>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Field_1" size="99999" source="File: C:\Users\odembowski\AppData\Roaming\Alteryx\Tools\cURLDownloadTool\Supporting_Macros\CURL7\src\DELETEME.txt" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDynamicInput" />
+    </Node>
+    <Node ToolID="176">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1134" y="690" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="DownloadedDataPath" selected="True" size="999999" />
+            <SelectField field="HeaderPath" selected="False" type="V_WString" size="99999" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="DownloadedDataPath" size="999999" source="TextInput:" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="177">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="1314" y="714" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Error</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="DownloadedDataPath" size="999999" source="Formula: Replace([DownloadedDataPath], '{User}', GetEnvironmentVariable('USERNAME'))" type="String" />
+            <Field name="Config" size="8" source="Formula: '-X ' + [HTTP Actions]" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
     </Node>
     <Node ToolID="104">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
@@ -1499,7 +1726,7 @@
     </Node>
     <Node ToolID="144">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="906" y="371" width="196" height="214" />
+        <Position x="894" y="342" width="196" height="214" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -1517,13 +1744,13 @@
       <ChildNodes>
         <Node ToolID="143">
           <GuiSettings Plugin="AlteryxBasePluginsGui.RunCommand.RunCommand">
-            <Position x="966" y="450" />
+            <Position x="954" y="421" />
           </GuiSettings>
           <Properties>
             <Configuration>
               <OutputConfiguration>
                 <Configuration>
-                  <File MaxRecords="" FileFormat="0">C:\Users\odembowski\Desktop\CURL7\src\config.txt</File>
+                  <File MaxRecords="" FileFormat="0">.\config.txt</File>
                   <Passwords />
                   <FormatSpecificOptions>
                     <LineEndStyle>CRLF</LineEndStyle>
@@ -1531,29 +1758,17 @@
                     <ForceQuotes>Never</ForceQuotes>
                     <HeaderRow>False</HeaderRow>
                     <CodePage>28591</CodePage>
+                    <WriteBOM>True</WriteBOM>
                   </FormatSpecificOptions>
                   <MultiFile value="False" />
                 </Configuration>
               </OutputConfiguration>
               <InputConfiguration>
-                <Configuration>
-                  <Passwords />
-                  <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="0">C:\Users\odembowski\Desktop\CURL7\src\DELETEME.txt</File>
-                  <FormatSpecificOptions>
-                    <CodePage>28591</CodePage>
-                    <Delimeter>\0</Delimeter>
-                    <IgnoreErrors>False</IgnoreErrors>
-                    <FieldLen>99999999999</FieldLen>
-                    <AllowShareWrite>False</AllowShareWrite>
-                    <HeaderRow>False</HeaderRow>
-                    <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
-                    <ImportLine>1</ImportLine>
-                  </FormatSpecificOptions>
-                </Configuration>
+                <Configuration />
               </InputConfiguration>
-              <ProgramName>C:\Users\odembowski\Desktop\CURL7\src\curl.exe</ProgramName>
+              <ProgramName>.\CURL7\src\curl.exe</ProgramName>
               <Arguments>-K config.txt -D "cheaders.txt" -o "DELETEME.txt"</Arguments>
-              <WorkingDir>C:\Users\odembowski\Desktop\CURL7\src</WorkingDir>
+              <WorkingDir />
               <RunMinimized value="False" />
               <RunSilent value="False" />
             </Configuration>
@@ -1562,137 +1777,8 @@
               <DefaultAnnotationText>Run curl.exe</DefaultAnnotationText>
               <Left value="False" />
             </Annotation>
-            <MetaInfo connection="Output">
-              <RecordInfo>
-                <Field name="Field_1" size="2147483647" source="File: C:\Users\odembowski\Desktop\CURL7\src\DELETEME.txt" type="V_String" />
-              </RecordInfo>
-            </MetaInfo>
           </Properties>
           <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRunCommand" />
-        </Node>
-      </ChildNodes>
-    </Node>
-    <Node ToolID="41">
-      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="174" y="450" width="120" height="19" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <Caption>URL FIELD</Caption>
-          <Style TextColor="#314c4a" FillColor="#0080c0" BorderColor="#314c4a" Transparency="25" Margin="60" />
-          <Disabled value="True" />
-          <Folded value="True" />
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <ChildNodes>
-        <Node ToolID="26">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="234" y="529" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <OrderChanged value="True" />
-              <SelectFields>
-                <SelectField field="typ" selected="False" />
-                <SelectField field="Header" selected="False" />
-                <SelectField field="URL" selected="True" rename="url_part" type="V_WString" size="999999" />
-                <SelectField field="Payload" selected="False" />
-                <SelectField field="USERNAME" selected="False" />
-                <SelectField field="PASSWORD" selected="False" />
-                <SelectField field="*Unknown" selected="False" />
-              </SelectFields>
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText />
-              <Left value="False" />
-            </Annotation>
-            <MetaInfo connection="Output">
-              <RecordInfo>
-                <Field name="url_part" size="999999" source="TextInput:" type="V_WString" />
-              </RecordInfo>
-            </MetaInfo>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
-        </Node>
-        <Node ToolID="124">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-            <Position x="498" y="546" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <FormulaFields>
-                <FormulaField field="URL" type="V_WString" size="999999" expression="&quot;url=&quot;+'&quot;'+StripQuotes([URL])+'&quot;'" />
-              </FormulaFields>
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText>URL="url="+'"'+StripQuotes([URL])+'"'</DefaultAnnotationText>
-              <Left value="False" />
-            </Annotation>
-            <MetaInfo connection="Output">
-              <RecordInfo>
-                <Field name="URL" size="999999" source="Formula: &quot;url=&quot;+'&quot;'+StripQuotes([URL])+'&quot;'" type="V_WString" />
-              </RecordInfo>
-            </MetaInfo>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
-        </Node>
-        <Node ToolID="136">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="594" y="541" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <OrderChanged value="False" />
-              <SelectFields>
-                <SelectField field="URL" selected="True" rename="Config" />
-                <SelectField field="*Unknown" selected="True" />
-              </SelectFields>
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText />
-              <Left value="False" />
-            </Annotation>
-            <MetaInfo connection="Output">
-              <RecordInfo>
-                <Field name="Config" size="999999" source="Formula: &quot;url=&quot;+'&quot;'+StripQuotes([URL])+'&quot;'" type="V_WString" />
-              </RecordInfo>
-            </MetaInfo>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
-        </Node>
-        <Node ToolID="152">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.DynamicRename.DynamicRename">
-            <Position x="306" y="546" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <RenameMode>Formula</RenameMode>
-              <Fields orderChanged="False">
-                <Field name="url_part" />
-                <Field name="*Unknown" />
-              </Fields>
-              <Expression>'URL'</Expression>
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText />
-              <Left value="False" />
-            </Annotation>
-            <MetaInfo connection="Output">
-              <RecordInfo>
-                <Field name="URL" size="999999" source="TextInput:" type="V_WString" />
-              </RecordInfo>
-            </MetaInfo>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDynamicRename" />
         </Node>
       </ChildNodes>
     </Node>
@@ -2737,7 +2823,7 @@
     </Node>
     <Node ToolID="60">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="174" y="786" width="154.2126" height="19" />
+        <Position x="138" y="791" width="154.2126" height="19" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -2755,7 +2841,7 @@
       <ChildNodes>
         <Node ToolID="59">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-            <Position x="234" y="927" />
+            <Position x="198" y="930" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -2784,7 +2870,7 @@
         </Node>
         <Node ToolID="126">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
-            <Position x="306" y="908" />
+            <Position x="390" y="906" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -2800,7 +2886,7 @@
             </Annotation>
             <MetaInfo connection="Output">
               <RecordInfo>
-                <Field description="TextToColumns: Parsed from Header" name="Header" size="59" source="TextToColumns: Parsed from Header" type="String" />
+                <Field description="TextToColumns: Parsed from Header" name="Header" size="9999" source="TextToColumns: Parsed from Header" type="V_WString" />
               </RecordInfo>
             </MetaInfo>
           </Properties>
@@ -2808,22 +2894,23 @@
         </Node>
         <Node ToolID="127">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-            <Position x="390" y="889" />
+            <Position x="486" y="894" />
           </GuiSettings>
           <Properties>
             <Configuration>
               <FormulaFields>
-                <FormulaField field="Header" type="String" size="59" expression="&quot;-H &quot; +'&quot;'+[Header]+'&quot;'" />
+                <FormulaField expression="&quot;-H &quot; +'&quot;'+[Header]+'&quot;'" field="Header" size="59" type="String" />
               </FormulaFields>
             </Configuration>
             <Annotation DisplayMode="0">
               <Name />
-              <DefaultAnnotationText>Header="-H " +'"'+[Header]+'"'</DefaultAnnotationText>
+              <DefaultAnnotationText><![CDATA[Header = "-H " +'"'+[Header]+'"'
+]]></DefaultAnnotationText>
               <Left value="False" />
             </Annotation>
             <MetaInfo connection="Output">
               <RecordInfo>
-                <Field description="TextToColumns: Parsed from Header" name="Header" size="59" source="Formula: &quot;-H &quot; +'&quot;'+[Header]+'&quot;'" type="String" />
+                <Field description="TextToColumns: Parsed from Header" name="Header" size="9999" source="Formula: &quot;-H &quot; +'&quot;'+[Header]+'&quot;'" type="V_WString" />
               </RecordInfo>
             </MetaInfo>
           </Properties>
@@ -2831,7 +2918,7 @@
         </Node>
         <Node ToolID="142">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="486" y="865" />
+            <Position x="582" y="870" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -2848,7 +2935,33 @@
             </Annotation>
             <MetaInfo connection="Output">
               <RecordInfo>
-                <Field description="TextToColumns: Parsed from Header" name="Config" size="59" source="Formula: &quot;-H &quot; +'&quot;'+[Header]+'&quot;'" type="String" />
+                <Field description="TextToColumns: Parsed from Header" name="Config" size="9999" source="Formula: &quot;-H &quot; +'&quot;'+[Header]+'&quot;'" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="178">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="282" y="918" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Header" selected="True" type="V_WString" size="9999" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Header" size="9999" source="TextInput:" type="V_WString" />
               </RecordInfo>
             </MetaInfo>
           </Properties>
@@ -3027,8 +3140,230 @@
         </Node>
       </ChildNodes>
     </Node>
+    <Node ToolID="41">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="174" y="450" width="120" height="19" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>URL FIELD</Caption>
+          <Style TextColor="#314c4a" FillColor="#0080c0" BorderColor="#314c4a" Transparency="25" Margin="60" />
+          <Disabled value="True" />
+          <Folded value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="152">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DynamicRename.DynamicRename">
+            <Position x="366" y="577" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <RenameMode>Formula</RenameMode>
+              <Fields orderChanged="False">
+                <Field name="url_part" />
+                <Field name="*Unknown" />
+              </Fields>
+              <Expression>'URL'</Expression>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="URL" size="999999" source="TextInput:" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDynamicRename" />
+        </Node>
+        <Node ToolID="136">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="594" y="572" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="URL" selected="True" rename="Config" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Config" size="999999" source="Formula: &quot;url=&quot;+'&quot;'+StripQuotes([URL])+'&quot;'" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="124">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="498" y="577" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="&quot;url=&quot;+'&quot;'+StripQuotes([URL])+'&quot;'" field="URL" size="999999" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[URL = "url="+'"'+StripQuotes([URL])+'"'
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="URL" size="999999" source="Formula: &quot;url=&quot;+'&quot;'+StripQuotes([URL])+'&quot;'" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="26">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="234" y="560" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="typ" selected="False" />
+                <SelectField field="Header" selected="False" />
+                <SelectField field="URL" selected="True" rename="url_part" type="V_WString" size="999999" />
+                <SelectField field="Payload" selected="False" />
+                <SelectField field="USERNAME" selected="False" />
+                <SelectField field="PASSWORD" selected="False" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="url_part" size="999999" source="TextInput:" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="182">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="437.9999" y="529" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File MaxRecords="" FileFormat="0">C:\Users\odembowski\Desktop\test.csv</File>
+              <Passwords />
+              <FormatSpecificOptions>
+                <LineEndStyle>CRLF</LineEndStyle>
+                <Delimeter>,</Delimeter>
+                <ForceQuotes>False</ForceQuotes>
+                <HeaderRow>True</HeaderRow>
+                <CodePage>28591</CodePage>
+                <WriteBOM>True</WriteBOM>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>test.csv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+        <Node ToolID="183">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+            <Position x="234" y="630" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <NumRows value="1" />
+              <Fields>
+                <Field name="test" />
+              </Fields>
+              <Data>
+                <r>
+                  <c>1</c>
+                </r>
+              </Data>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="test" source="TextInput:" type="Byte" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+        </Node>
+        <Node ToolID="184">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="330" y="642" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File MaxRecords="" FileFormat="0">C:\Users\odembowski\Desktop\test2.csv</File>
+              <Passwords />
+              <FormatSpecificOptions>
+                <LineEndStyle>CRLF</LineEndStyle>
+                <Delimeter>,</Delimeter>
+                <ForceQuotes>False</ForceQuotes>
+                <HeaderRow>True</HeaderRow>
+                <CodePage>28591</CodePage>
+                <WriteBOM>True</WriteBOM>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>test2.csv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+      </ChildNodes>
+    </Node>
   </Nodes>
   <Connections>
+    <Connection>
+      <Origin ToolID="169" Connection="Output" />
+      <Destination ToolID="172" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="171" Connection="Output" />
+      <Destination ToolID="172" Connection="Source" />
+    </Connection>
     <Connection name="#1">
       <Origin ToolID="30" Connection="Question" />
       <Destination ToolID="31" Connection="Question" />
@@ -3231,11 +3566,11 @@
     </Connection>
     <Connection>
       <Origin ToolID="135" Connection="Output" />
-      <Destination ToolID="148" Connection="Input" />
+      <Destination ToolID="143" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="135" Connection="Output" />
-      <Destination ToolID="143" Connection="Input" />
+      <Destination ToolID="171" Connection="Input" />
     </Connection>
     <Connection name="#1">
       <Origin ToolID="141" Connection="Output" />
@@ -3247,10 +3582,6 @@
     </Connection>
     <Connection name="#7">
       <Origin ToolID="140" Connection="Output" />
-      <Destination ToolID="135" Connection="Input" />
-    </Connection>
-    <Connection name="#8">
-      <Origin ToolID="136" Connection="Output" />
       <Destination ToolID="135" Connection="Input" />
     </Connection>
     <Connection name="#4">
@@ -3275,6 +3606,10 @@
     </Connection>
     <Connection name="#10">
       <Origin ToolID="159" Connection="Output" />
+      <Destination ToolID="135" Connection="Input" />
+    </Connection>
+    <Connection name="#8">
+      <Origin ToolID="136" Connection="Output" />
       <Destination ToolID="135" Connection="Input" />
     </Connection>
     <Connection>
@@ -3307,15 +3642,7 @@
     </Connection>
     <Connection>
       <Origin ToolID="154" Connection="Output" />
-      <Destination ToolID="155" Connection="Source" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="143" Connection="Output" />
-      <Destination ToolID="155" Connection="Targets" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="155" Connection="Output" />
-      <Destination ToolID="156" Connection="Input" />
+      <Destination ToolID="170" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="156" Connection="Output" />
@@ -3338,6 +3665,42 @@
       <Destination ToolID="157" Connection="Input" />
     </Connection>
     <Connection>
+      <Origin ToolID="170" Connection="Output" />
+      <Destination ToolID="169" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="171" Connection="Output3" />
+      <Destination ToolID="148" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="171" Connection="Output2" />
+      <Destination ToolID="177" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="173" Connection="Output" />
+      <Destination ToolID="177" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="172" Connection="Output" />
+      <Destination ToolID="156" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="174" Connection="Output" />
+      <Destination ToolID="176" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="175" Connection="Output" />
+      <Destination ToolID="166" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="176" Connection="Output" />
+      <Destination ToolID="173" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="177" Connection="Output" />
+      <Destination ToolID="175" Connection="Input" />
+    </Connection>
+    <Connection>
       <Origin ToolID="131" Connection="Output" />
       <Destination ToolID="134" Connection="Input" />
     </Connection>
@@ -3352,22 +3715,6 @@
     <Connection>
       <Origin ToolID="168" Connection="Output" />
       <Destination ToolID="130" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="143" Connection="Output" />
-      <Destination ToolID="166" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="26" Connection="Output" />
-      <Destination ToolID="152" Connection="Targets" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="124" Connection="Output" />
-      <Destination ToolID="136" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="152" Connection="Output" />
-      <Destination ToolID="124" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="91" Connection="Output" />
@@ -3439,7 +3786,7 @@
     </Connection>
     <Connection>
       <Origin ToolID="59" Connection="Output" />
-      <Destination ToolID="126" Connection="Input" />
+      <Destination ToolID="178" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="126" Connection="Output" />
@@ -3448,6 +3795,10 @@
     <Connection>
       <Origin ToolID="127" Connection="Output" />
       <Destination ToolID="142" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="178" Connection="Output" />
+      <Destination ToolID="126" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="33" Connection="Output" />
@@ -3460,6 +3811,26 @@
     <Connection>
       <Origin ToolID="165" Connection="Output" />
       <Destination ToolID="125" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="152" Connection="Output" />
+      <Destination ToolID="124" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="152" Connection="Output" />
+      <Destination ToolID="182" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="124" Connection="Output" />
+      <Destination ToolID="136" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="26" Connection="Output" />
+      <Destination ToolID="152" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="183" Connection="Output" />
+      <Destination ToolID="184" Connection="Input" />
     </Connection>
   </Connections>
   <Properties>
@@ -3488,13 +3859,13 @@
       </Constant>
       <Constant>
         <Namespace>Question</Namespace>
-        <Name>URLField</Name>
+        <Name>radioURLField</Name>
         <Value />
         <IsNumeric value="False" />
       </Constant>
       <Constant>
         <Namespace>Question</Namespace>
-        <Name>URLMan</Name>
+        <Name>radioURLMan</Name>
         <Value />
         <IsNumeric value="False" />
       </Constant>
@@ -3512,55 +3883,55 @@
       </Constant>
       <Constant>
         <Namespace>Question</Namespace>
-        <Name>HeaderFields</Name>
+        <Name>radioHeadersNo</Name>
         <Value />
         <IsNumeric value="False" />
       </Constant>
       <Constant>
         <Namespace>Question</Namespace>
-        <Name>Headertextbox</Name>
+        <Name>headersText</Name>
         <Value />
         <IsNumeric value="False" />
       </Constant>
       <Constant>
         <Namespace>Question</Namespace>
-        <Name>HeaderMan</Name>
+        <Name>radioHeaderFields</Name>
         <Value />
         <IsNumeric value="False" />
       </Constant>
       <Constant>
         <Namespace>Question</Namespace>
-        <Name>HeaderListBox</Name>
+        <Name>headerFieldsList</Name>
         <Value />
         <IsNumeric value="False" />
       </Constant>
       <Constant>
         <Namespace>Question</Namespace>
-        <Name>PayloadField</Name>
+        <Name>radioPayloadNo</Name>
         <Value />
         <IsNumeric value="False" />
       </Constant>
       <Constant>
         <Namespace>Question</Namespace>
-        <Name>PayloadDrop</Name>
+        <Name>payloadFieldDrop</Name>
         <Value />
         <IsNumeric value="False" />
       </Constant>
       <Constant>
         <Namespace>Question</Namespace>
-        <Name>Payloadtextbox</Name>
+        <Name>payloadText</Name>
         <Value />
         <IsNumeric value="False" />
       </Constant>
       <Constant>
         <Namespace>Question</Namespace>
-        <Name>PayloadMan</Name>
+        <Name>radioPayloadField</Name>
         <Value />
         <IsNumeric value="False" />
       </Constant>
       <Constant>
         <Namespace>Question</Namespace>
-        <Name>CredFields</Name>
+        <Name>radioCredentialsField</Name>
         <Value />
         <IsNumeric value="False" />
       </Constant>
@@ -3578,13 +3949,13 @@
       </Constant>
       <Constant>
         <Namespace>Question</Namespace>
-        <Name>CredMan</Name>
+        <Name>radioCredentialsMan</Name>
         <Value />
         <IsNumeric value="False" />
       </Constant>
       <Constant>
         <Namespace>Question</Namespace>
-        <Name>NoCredentials</Name>
+        <Name>radioCredentialsNo</Name>
         <Value />
         <IsNumeric value="False" />
       </Constant>
@@ -3602,7 +3973,7 @@
       </Constant>
       <Constant>
         <Namespace>Question</Namespace>
-        <Name>Macro Output (29)</Name>
+        <Name>OutputR</Name>
         <Value />
         <IsNumeric value="False" />
       </Constant>
@@ -3614,31 +3985,31 @@
       </Constant>
       <Constant>
         <Namespace>Question</Namespace>
-        <Name>NoPayload</Name>
+        <Name>radioPayloadMan</Name>
         <Value />
         <IsNumeric value="False" />
       </Constant>
       <Constant>
         <Namespace>Question</Namespace>
-        <Name>NoHeaders</Name>
+        <Name>radioHeadersMan</Name>
         <Value />
         <IsNumeric value="False" />
       </Constant>
       <Constant>
         <Namespace>Question</Namespace>
-        <Name>Macro Output (153)</Name>
+        <Name>OutputO</Name>
         <Value />
         <IsNumeric value="False" />
       </Constant>
       <Constant>
         <Namespace>Question</Namespace>
-        <Name>Macro Output (157)</Name>
+        <Name>OutputH</Name>
         <Value />
         <IsNumeric value="False" />
       </Constant>
       <Constant>
         <Namespace>Question</Namespace>
-        <Name>CredWin</Name>
+        <Name>radioCredentialsWinAuth</Name>
         <Value />
         <IsNumeric value="False" />
       </Constant>
@@ -3897,13 +4268,13 @@ DELETE
                 <Question>
                   <Type>RadioGroup</Type>
                   <Description>Input URL From Field</Description>
-                  <Name>URLField</Name>
+                  <Name>radioURLField</Name>
                   <ToolId value="40" />
                   <Questions>
                     <Question>
                       <Type>MacroInput</Type>
-                      <Description>Macro Input (21)</Description>
-                      <Name>Macro Input (21)</Name>
+                      <Description>Input</Description>
+                      <Name>Input</Name>
                       <ToolId value="21" />
                     </Question>
                     <Question>
@@ -3925,7 +4296,7 @@ DELETE
                 <Question>
                   <Type>RadioGroup</Type>
                   <Description>Input URL Manually</Description>
-                  <Name>URLMan</Name>
+                  <Name>radioURLMan</Name>
                   <ToolId value="42" />
                   <Questions>
                     <Question>
@@ -3946,20 +4317,20 @@ DELETE
             </Question>
             <Question>
               <Type>MacroOutput</Type>
-              <Description>Macro Output (29)</Description>
-              <Name>Macro Output (29)</Name>
+              <Description>OutputR</Description>
+              <Name>OutputR</Name>
               <ToolId value="29" />
             </Question>
             <Question>
               <Type>MacroOutput</Type>
-              <Description>Macro Output (153)</Description>
-              <Name>Macro Output (153)</Name>
+              <Description>OutputO</Description>
+              <Name>OutputO</Name>
               <ToolId value="153" />
             </Question>
             <Question>
               <Type>MacroOutput</Type>
-              <Description>Macro Output (157)</Description>
-              <Name>Macro Output (157)</Name>
+              <Description>OutputH</Description>
+              <Name>OutputH</Name>
               <ToolId value="157" />
             </Question>
           </Questions>
@@ -3979,7 +4350,7 @@ DELETE
                 <Question>
                   <Type>RadioGroup</Type>
                   <Description>No Header</Description>
-                  <Name>NoHeaders</Name>
+                  <Name>radioHeadersNo</Name>
                   <ToolId value="118" />
                   <Questions />
                   <Default value="True" />
@@ -3988,13 +4359,13 @@ DELETE
                 <Question>
                   <Type>RadioGroup</Type>
                   <Description>Input Headers From Field</Description>
-                  <Name>HeaderFields</Name>
+                  <Name>radioHeaderFields</Name>
                   <ToolId value="64" />
                   <Questions>
                     <Question>
                       <Type>ListBox</Type>
                       <Description>Select Header Fields</Description>
-                      <Name>HeaderListBox</Name>
+                      <Name>headerFieldsList</Name>
                       <ToolId value="72" />
                       <Multiple value="True" />
                       <Multiple_Custom value="False" />
@@ -4011,13 +4382,13 @@ DELETE
                 <Question>
                   <Type>RadioGroup</Type>
                   <Description>Input Headers Manually</Description>
-                  <Name>HeaderMan</Name>
+                  <Name>radioHeadersMan</Name>
                   <ToolId value="65" />
                   <Questions>
                     <Question>
                       <Type>TextBox</Type>
                       <Description>Enter Headers (Name: Value line by line):</Description>
-                      <Name>Headertextbox</Name>
+                      <Name>headersText</Name>
                       <ToolId value="68" />
                       <Default />
                       <Password value="False" />
@@ -4047,7 +4418,7 @@ DELETE
                 <Question>
                   <Type>RadioGroup</Type>
                   <Description>No Payload</Description>
-                  <Name>NoPayload</Name>
+                  <Name>radioPayloadNo</Name>
                   <ToolId value="117" />
                   <Questions />
                   <Default value="True" />
@@ -4056,13 +4427,13 @@ DELETE
                 <Question>
                   <Type>RadioGroup</Type>
                   <Description>Input Payload From Field String</Description>
-                  <Name>PayloadField</Name>
+                  <Name>radioPayloadField</Name>
                   <ToolId value="79" />
                   <Questions>
                     <Question>
                       <Type>ListBox</Type>
                       <Description>Select Payload Field</Description>
-                      <Name>PayloadDrop</Name>
+                      <Name>payloadFieldDrop</Name>
                       <ToolId value="85" />
                       <Multiple value="False" />
                       <Default />
@@ -4078,13 +4449,13 @@ DELETE
                 <Question>
                   <Type>RadioGroup</Type>
                   <Description>Input Payload Manually</Description>
-                  <Name>PayloadMan</Name>
+                  <Name>radioPayloadMan</Name>
                   <ToolId value="80" />
                   <Questions>
                     <Question>
                       <Type>TextBox</Type>
                       <Description>Enter Payload String</Description>
-                      <Name>Payloadtextbox</Name>
+                      <Name>payloadText</Name>
                       <ToolId value="83" />
                       <Default />
                       <Password value="False" />
@@ -4114,7 +4485,7 @@ DELETE
                 <Question>
                   <Type>RadioGroup</Type>
                   <Description>No Credentials</Description>
-                  <Name>NoCredentials</Name>
+                  <Name>radioCredentialsNo</Name>
                   <ToolId value="107" />
                   <Questions />
                   <Default value="True" />
@@ -4123,7 +4494,7 @@ DELETE
                 <Question>
                   <Type>RadioGroup</Type>
                   <Description>Input Credentials From Fields</Description>
-                  <Name>CredFields</Name>
+                  <Name>radioCredentialsField</Name>
                   <ToolId value="93" />
                   <Questions>
                     <Question>
@@ -4157,7 +4528,7 @@ DELETE
                 <Question>
                   <Type>RadioGroup</Type>
                   <Description>Input Credentials Manually</Description>
-                  <Name>CredMan</Name>
+                  <Name>radioCredentialsMan</Name>
                   <ToolId value="94" />
                   <Questions>
                     <Question>
@@ -4187,7 +4558,7 @@ DELETE
                 <Question>
                   <Type>RadioGroup</Type>
                   <Description>Use Windows Auth</Description>
-                  <Name>CredWin</Name>
+                  <Name>radioCredentialsWinAuth</Name>
                   <ToolId value="158" />
                   <Questions />
                   <Default value="False" />
@@ -4213,6 +4584,8 @@ DELETE
         <Tool ToolId="21" Selected="True" />
         <Tool ToolId="157" Selected="True" />
         <Tool ToolId="6" Selected="False" />
+        <Tool ToolId="182" Selected="True" />
+        <Tool ToolId="184" Selected="True" />
       </Wiz_OpenOutputTools>
       <Wiz_OutputMessage />
       <Wiz_NoOutputFilesMessage />
