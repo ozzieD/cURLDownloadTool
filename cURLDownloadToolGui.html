@@ -40,6 +40,7 @@
       <div class='footer'>
         <hr>
         <div style='margin-top: 8px;margin-bottom: 8px;'>
+          <!-- <ayx data-ui-props='{type:"Button", widgetId:"buttonPrimary", label:"Next", onClick:setPage("#Headers"), category:"primary"}'></ayx> -->
           <button type='submit' class='nextBtn' id='headersNextBtn' onclick='setPage("#Headers")'>XMSG("Next")</button>
         </div>
         <br>
@@ -67,6 +68,8 @@
           <hr>
           <div style='margin-top: 8px;margin-bottom: 8px;'>
               <!-- Add id name and onclick function during process story -->
+              <!-- <ayx data-ui-props='{type:"Button", widgetId:"buttonPrimary", label:"XMSG("Save")", onClick:buttonClicked, category:"primary"}'></ayx> -->
+
               <button type='submit' class='nextBtn' id='payloadNextBtn' onclick='setPage("#Payload")'>XMSG("Next")</button>
               <button class='prevBtn' id='HTTPPrevBtn' onclick='setPage("#HTTP")'>XMSG("Previous")</button>
           </div>
@@ -182,14 +185,14 @@
 Alteryx.Gui.BeforeLoad = (manager, AlteryxDataItems, json) => {
   // Setting up simplebool dataItems that will match up with the macro's radio buttons
 
-  //Radio buttons for URL________________________________________________________________________
-  const radioURLdataItemUpdater = (e) => {
-    radioURLField.setValue(e.value === 'URLField')
-    radioURLMan.setValue(e.value === 'URLMan')
-    }
+  // //Radio buttons for URL________________________________________________________________________
+  // const radioURLdataItemUpdater = (e) => {
+  //   radioURLField.setValue(e.value === 'URLField')
+  //   radioURLMan.setValue(e.value === 'URLMan')
+  //   }
 
   manager.getDataItem("radioURL").setSuppressed(true)
-  manager.getDataItem("radioURL").registerPropertyListener("value", radioURLdataItemUpdater)
+  // manager.getDataItem("radioURL").registerPropertyListener("value", radioURLdataItemUpdater)
 
   const radioURLMan = new AlteryxDataItems.SimpleBool('radioURLMan')
   manager.addDataItem(radioURLMan)
@@ -264,6 +267,7 @@ Alteryx.Gui.AfterLoad = (manager) => {
 
   // Get radio group configs
   const radioURL = manager.getDataItem('radioURL').getValue()
+  console.log(radioURL)
   const radioHeaders = manager.getDataItem('radioHeaders').getValue()
   const radioPayload = manager.getDataItem('radioPayload').getValue()
   const radioCredentials = manager.getDataItem('radioCredentials').getValue()
