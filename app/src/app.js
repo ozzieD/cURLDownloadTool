@@ -1,97 +1,82 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import moment from 'moment'
-import AyxStore from './stores/AyxStore'
-import { extendObservable, autorun, toJS } from 'mobx'
-//
-// Alteryx.Gui.BeforeLoad = function(manager, AlteryxDataItems) {
-//   // Manually create a new data item for the widget with the specified dataname.
-//   const RadioURL = new AlteryxDataItems.StringSelector({dataName: 'RadioURL', id: 'dataItem1'})
-//   // Set the list of selectable options for this data item.
-//   RadioURL.StringList
-//     .Add('URLField', 'Input URL From Field')
-//     .Add('URLMan', 'Input URL Manually')
-//   // Add this data item to the manager.
-//   manager.AddDataItem(RadioURL)
-//     // Set the value of the data item.
-//   RadioURL.setValue('URLField')
-// }
-//
-// Alteryx.Gui.AfterLoad = (manager) => {
-//   const collection = [
-//     {key: 'URLDrop', type: 'value'},
-//     {key: 'URLText', type: 'value'}
-//     // {key: 'RadioURL', type: 'RadioButton'}
-//   ]
-//
-//   // Instantiate the mobx store which will sync all dataItems specified in the collection.
-//   const store = new AyxStore(manager, collection)
-//   extendObservable(store, {
-//     get URL () {
-//       const array = [
-//         store.URLDrop,
-//         store.URLText
-//         // store.RadioURL
-//       ]
-//       return array
-//     }
-//   })
-//
-// // Because radio buttons for whatever reason default to the value simple, we change it to the value of URLField
-//   autorun(() => {
-//     if (store.RadioURL.value === 'simple') {
-//       store.RadioURL.setValue('URLField')
-//     }
-//   })
-//
-// //  Hide/unhide URL field selector if radio button is selected
-//   autorun(() => {
-//     if (store.RadioURL === 'URLField') {
-//       document.getElementById('urlDrop').style.display = 'block'
-//       console.log(store.RadioURL)
-//     } else {
-//       document.getElementById('urlDrop').style.display = 'none'
-//     }
-//   })
-//
-// //  Hide/unhide URL textbox selector if radio button is selected
-//   autorun(() => {
-//     if (store.RadioURL === 'URLMan') {
-//       document.getElementById('urlText').style.display = 'block'
-//       console.log(store.RadioURL)
-//     } else {
-//       document.getElementById('urlText').style.display = 'none'
-//     }
-//   })
-// }
-// Used to show/hide different fielsets
-const setPage = (fieldsetName) => {
-  // Array containing all fieldsets
-  let hideArray = [
-    '#HTTP',
-    '#Headers',
-    '#Payload',
-    '#Credentials'
-  ]
+import * as Fieldset from './utils/fieldset';
+import * as radioButtons from './utils/radioButtons';
 
-  let showArray = []
+// Window declarations to expose functionality to the console and Gui.html file
+window.setPage = Fieldset.setPage;
 
-  showArray.push(fieldsetName)
+window.Alteryx.Gui.BeforeLoad = (manager, AlteryxDataItems, json) => {
+  // Setting up simplebool dataItems that will match up with the macro's radio buttons
+  // Radio buttons for URL________________________________________________________________________
+  // manager.getDataItem('radioURL').setSuppressed(true);
+  manager.getDataItem('radioURL').registerPropertyListener('value', radioButtons.radioURLdataItemUpdater);
 
-  $(document).ready(() => {
-    // Hide each item in the hideArray
-    hideArray.forEach((v) => {
-      $(v).hide()
-    })
-    // Show the fieldset corresponding with fieldsetName
-    showArray.forEach((v) => {
-      $(v).show()
-    })
-  })
-}
 
-// Alteryx.Gui.AfterLoad = (manager) => {
-//   // Used to show/hide different fielsets
-//   displaySort()
-//   Alteryx.Gui.Manager.getDataItem('DoSort').registerPropertyListener('value', displaySort)
-// }
+  const radioURLMan = new AlteryxDataItems.SimpleBool('radioURLMan');
+  manager.addDataItem(radioURLMan);
+
+  const radioURLField = new AlteryxDataItems.SimpleBool('radioURLField');
+  manager.addDataItem(radioURLField);
+
+  // Radio buttons for Headers____________________________________________________________________
+
+  // manager.getDataItem('radioHeaders').setSuppressed(true);
+  manager.getDataItem('radioHeaders').registerPropertyListener('value', radioButtons.radioHeadersdataItemUpdater);
+
+  const radioHeadersNo = new AlteryxDataItems.SimpleBool('radioHeadersNo');
+  manager.addDataItem(radioHeadersNo);
+
+  const radioHeaderFields = new AlteryxDataItems.SimpleBool('radioHeaderFields');
+  manager.addDataItem(radioHeaderFields);
+
+  const radioHeadersMan = new AlteryxDataItems.SimpleBool('radioHeadersMan');
+  manager.addDataItem(radioHeadersMan);
+
+  // Radio buttons for Payload_______________________________________________________________________________
+  // manager.getDataItem('radioPayload').setSuppressed(true);
+  manager.getDataItem('radioPayload').registerPropertyListener('value', radioButtons.radioPayloaddataItemUpdater);
+
+  const radioPayloadNo = new AlteryxDataItems.SimpleBool('radioPayloadNo');
+  manager.addDataItem(radioPayloadNo);
+
+  const radioPayloadField = new AlteryxDataItems.SimpleBool('radioPayloadField');
+  manager.addDataItem(radioPayloadField);
+
+  const radioPayloadMan = new AlteryxDataItems.SimpleBool('radioPayloadMan');
+  manager.addDataItem(radioPayloadMan);
+
+  // Radio buttons for Credentials_______________________________________________________________________________
+  // manager.getDataItem('radioCredentials').setSuppressed(true);
+  manager.getDataItem('radioCredentials').registerPropertyListener('value', radioButtons.radioCredentialsdataItemUpdater);
+
+  const radioCredentialsNo = new AlteryxDataItems.SimpleBool('radioCredentialsNo');
+  manager.addDataItem(radioCredentialsNo);
+
+  const radioCredentialsField = new AlteryxDataItems.SimpleBool('radioCredentialsField');
+  manager.addDataItem(radioCredentialsField);
+
+  const radioCredentialsMan = new AlteryxDataItems.SimpleBool('radioCredentialsMan');
+  manager.addDataItem(radioCredentialsMan);
+
+  const radioCredentialsWinAuth = new AlteryxDataItems.SimpleBool('radioCredentialsWinAuth');
+  manager.addDataItem(radioCredentialsWinAuth);
+
+  // change pages
+  const currentPage = new AlteryxDataItems.SimpleString('currentPage');
+  manager.addDataItem(currentPage);
+
+  // Sets default on first load
+  if (manager.toolInfo.IsFirstConfig) {
+    json.Configuration = { Value: [{ '@name': 'currentPage', '#text': 'HTTP' }] };
+  }
+};
+
+window.Alteryx.Gui.AfterLoad = (manager) => {
+  // Sets correct page (i.e. "fieldset")
+  const currentPage = manager.getDataItem('currentPage');
+  document.getElementById(currentPage.getValue()).style.display = 'block';
+
+  // Set default values if it's the first config
+  if (manager.toolInfo.IsFirstConfig) {
+    radioButtons.setDefaultRadioButtonValues(manager);
+  }
+};

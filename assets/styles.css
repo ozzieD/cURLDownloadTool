@@ -7,6 +7,10 @@ hr {
   margin: 8px 0px 0px 0px;
 }
 
+.correctLegend {
+    background-color: #e5e5e5;
+}
+
 #urlDrop {
   margin-left: 20px
 }
@@ -36,42 +40,22 @@ hr {
   vertical-align: center;
 }
 
-.prevBtn {
-  border-color: rgb(228, 228, 228);
-  background-color: white;
-  color: black;
-  display: inline-block;
-  margin: 0 0 0 5px;
-  padding: 6px 10px 7px 10px;
-  border-width: 1px;
-  border-style: solid;
-  font-family: 'Segoe UI', Arial, sans-serif;
-  font-size: 1em;
-  cursor: pointer;
-  float: right;
-}
-
-.nextBtn {
-  float: right;
-  display: inline-block;
-  border-width: 1px;
-  border-style: solid;
-  font-family: 'Segoe UI', Arial, sans-serif;
-  font-size: 1em;
-  cursor: pointer;
-}
-
 .footer {
-  position:fixed;
-  margin-left: 8px;
-  margin-right: 8px;
-  left:0px;
-  bottom:0px;
-  height:82px;
-  width:96%;
-  /* background: white; */
+    position: fixed;
+    margin-left: 8px;
+    margin-right: 8px;
+    left: 0px;
+    bottom: 0px;
+    height: 82px;
+    width: 96%;
+    background: #e5e5e5;
+    text-align: right;
 }
 
 .footer_spacer {
   height: 90px;
+}
+
+ayx.ayxNav {
+    display: inline;
 }
